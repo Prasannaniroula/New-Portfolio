@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { motion } from 'motion/react'
 
 function NavBar() {
   const navOptions = [
@@ -11,7 +12,11 @@ function NavBar() {
   const [link,activeLink]= useState("Home")
   return (
     <>
-    <div className='flex bg-black justify-between items-center mt-2 mb-2'>
+    <motion.div className='flex bg-black justify-between items-center mt-2 mb-2' initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ 
+    duration: 0.5,
+    delay: 0.5,  
+    ease: "easeInOut" 
+  }}>
         <h1 className='text-2xl font-bold text-white'>Portfolio</h1>
         <div className='text-white flex gap-18'>
            {navOptions.map((option)=>(
@@ -24,7 +29,7 @@ function NavBar() {
            ))}
            <button className='bg-white rounded-2xl px-4 py-1 text-black'>Contact me</button>
         </div>
-    </div>
+    </motion.div>
     </>
   )
 }
