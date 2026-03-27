@@ -31,7 +31,7 @@ function Index() {
     <div className="w-full  bg-[#902124] flex justify-center text-white" >
             <motion.img src='front.png' className='h-[500px] object-contain ' initial={{ y: "calc(100vw -50%)" }} animate={{y:"calc(-36%)"}} transition={{duration:1,delay:0.5, ease:easeInOut}}/>
         </div>
-        <div className='w-full absolute h-130 bottom-0 text-black [clip-path:polygon(100%_0,100%_0,100%_100%,-700%_100%)] bg-black flex justify-center items-center'>
+        <div className='w-full absolute h-150 bottom-0 text-black [clip-path:polygon(100%_0,100%_0,100%_100%,-700%_100%)] bg-black flex justify-center items-center'>
         <div className='flex flex-col gap-04 text-white justify-center items-center'>
             <div className='text-4xl font-bold'>
               Hi, I am
