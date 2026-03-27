@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { motion } from 'motion/react'
+import { VscThreeBars } from "react-icons/vsc";
 
 function NavBar() {
   const navOptions = [
@@ -9,6 +10,7 @@ function NavBar() {
     {id:"skills",label:"Skills"},
     {id:"projects",label:"Projects"},
   ]
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [link,activeLink]= useState("Home")
   return (
     <>
@@ -18,7 +20,7 @@ function NavBar() {
     ease: "easeInOut" 
   }}>
         <h1 className='text-2xl font-bold text-white'>Portfolio</h1>
-        <div className='text-white flex gap-18'>
+        <div className='text-white gap-2 hidden sm:flex sm:gap-10'>
            {navOptions.map((option)=>(
             <div key={option.id}
             onClick={()=>activeLink(option.id)}
@@ -28,6 +30,9 @@ function NavBar() {
             > {option.label}</div>
            ))}
            <button className='bg-white rounded-2xl px-4 py-1 text-black'>Contact me</button>
+        </div>
+        <div className='text-white text-2xl lg:hidden md:hidden sm:hidden'>
+        <VscThreeBars  />
         </div>
     </motion.div>
     </>

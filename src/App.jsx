@@ -5,9 +5,12 @@ import Index from './Pages/Index'
 function App() {
   return (
     <>
-    <div>
+    <div className='flex flex-col'>
     <NavBar/>
+    <div className='flex-1'>
     <Index/>
+    </div>
+   
     </div>
     </>
   )

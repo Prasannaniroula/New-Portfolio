@@ -9,3 +9,8 @@ body{
   background-color: black;
   font-family:  "PT Sans";
 }
+@media screen and (max-width:650px) {
+  body{
+  margin: 0px 10px;
+  }
+}
