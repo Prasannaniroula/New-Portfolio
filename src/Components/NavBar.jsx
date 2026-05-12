@@ -2,16 +2,19 @@ import React from 'react'
 import { useState } from 'react'
 import { motion } from 'motion/react'
 import { VscThreeBars } from "react-icons/vsc";
+import { useTheme } from '../Context/ThemeContext';
 
 function NavBar() {
+  const[isDark, toggleTheme] = useTheme();
   const navOptions = [
     {id:"home",label:"Home"},
     {id:"aboutme",label:"About me"},
     {id:"skills",label:"Skills"},
     {id:"projects",label:"Projects"},
+    {id:"hobby",label:"Hobby"},
   ]
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [link,activeLink]= useState("Home")
+  const {isMenuOpen, setIsMenuOpen} = useState(false);
+  const [link,activeLink]= useState("home")
   return (
     <>
     <motion.div className='flex bg-black justify-between items-center mt-2 mb-2' initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ 
