@@ -1,8 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { AnimatePresence, easeInOut, motion } from "motion/react";
+import { themes } from "../Context/ThemeContext";
+import { useTheme } from "../Context/ThemeContext";
+import { BsLinkedin,BsGithub, BsFacebook, } from "react-icons/bs";
 
 function Index() {
+    const{isDark, toggleTheme} = useTheme();
+     const t = isDark ? themes.dark: themes.light
   const arr = ["Full-Stack Developer", "AI enthusiast"];
   const [index, setIndex] = useState(0);
   useEffect(() => {
@@ -14,8 +19,8 @@ function Index() {
   return (
     <>
       {/* larger screen(desktop/laptop) */}
-      <div className="w-full h-screen hidden sm:flex">
-        <div className="w-1/2 text-white hidden justify-center items-center sm:flex">
+      <div className={`w-full h-screen hidden sm:flex ${t.navbar} ${isDark?'text-white':'text-black'}`}>
+        <div className="w-1/2 hidden justify-center items-center sm:flex">
           <div className="flex flex-col gap-14 mt-10">
             <div className="text-4xl font-bold">Hi, I am</div>
             <div className="flex-col gap-4 ">
@@ -24,6 +29,18 @@ function Index() {
               </div>
               <div className="text-xl">
                 Full-stack developer/AI enthusiast
+              </div>
+              <div className="flex gap-8 mt-5">
+              <a href="https://www.linkedin.com/in/prasanna-niroula-74564219b" target="_blank" rel="noreferrer">
+                <BsLinkedin className="text-2xl cursor-pointer hover:text-blue-500 transition" />
+              </a>
+              <a href="https://github.com/Prasannaniroula" target="_blank" rel="noreferrer">
+                <BsGithub className="text-2xl cursor-pointer hover:text-blue-500 transition"/>
+                </a>
+                <a href="https://www.facebook.com/prasanna.niraula.9" target="_blank" rel="noreferrer">
+                <BsFacebook className="text-2xl cursor-pointer hover:text-blue-500 transition"/>
+                </a>
+
               </div>
             </div>
           </div>
@@ -40,7 +57,7 @@ function Index() {
       </div>
 
       {/* smaller screen(mobile devices) */}
-      <div className="w-full h-screen lg:hidden md:hidden sm:hidden relative pt-10">
+      <div className="w-full min-h-screen flex sm:hidden relative pt-10">
         <div className="w-full  bg-[#902124] flex justify-center text-white rounded-4xl sticky top-0">
           <motion.img
             src="front.png"
@@ -50,8 +67,8 @@ function Index() {
             transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
           />
         </div>
-        <div className="w-full absolute h-140 bottom-0 [clip-path:polygon(100%_0,100%_0,100%_100%,-1000%_100%)] bg-black pt-20">
-          <div className="text-white flex flex-col gap-4 text-center ">
+        <div className={`w-full absolute h-140 bottom-0 [clip-path:polygon(100%_0,100%_0,100%_100%,-1000%_100%)] pt-20 ${isDark?'bg-black':'bg-white'}`}>
+          <div className={` flex flex-col gap-4 text-center ${isDark?'text-white':'text-black'}`}>
             <div className="text-4xl font-bold">Hi, I am</div>
             <div>
               <div className="text-6xl font-bold">
@@ -60,6 +77,7 @@ function Index() {
               <div className="text-xl">
                 Full-stack developer/AI enthusiast
               </div>
+              <BsLinkedin/>
             </div>
           </div>
         </div>
