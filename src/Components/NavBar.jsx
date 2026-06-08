@@ -20,12 +20,12 @@ function NavBar() {
   const [link,activeLink]= useState("home")
   return (
     <>
-    <motion.div className={`flex ${t.bg} ${t.text} border-b pt-2 pb-2 border-zinc-200  justify-between items-center mt-2 mb-2`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ 
+    <motion.div className={`flex sticky top-0 z-50 ${t.bg} ${t.text} border-b pt-10 sm:p-4 border-zinc-200  justify-between items-center`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ 
     duration: 0.5,
     delay: 0.5,  
     ease: "easeInOut" 
   }}>
-        <h1 className={`text-2xl font-bold `}>Portfolio</h1>
+        <h1 className={`text-4xl font-bold `}>Portfolio</h1>
         <div className={`gap-2 ${t.text} hidden sm:flex sm:gap-10`}>
            {navOptions.map((option)=>(
             <div key={option.id}
