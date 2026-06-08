@@ -4,23 +4,24 @@ import { AnimatePresence, motion } from 'motion/react'
 import { VscThreeBars } from "react-icons/vsc";
 import { useTheme } from '../Context/ThemeContext';
 import { themes } from '../Context/ThemeContext';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   const{isDark, toggleTheme} = useTheme();
   const t = isDark ? themes.dark: themes.light
   
   const navOptions = [
-    {id:"home",label:"Home"},
-    {id:"aboutme",label:"About me"},
-    {id:"skills",label:"Skills"},
-    {id:"projects",label:"Projects"},
-    {id:"hobby",label:"Hobby"},
+    {id:"home",label:"Home", link:'/'},
+    {id:"aboutme",label:"About me",link:'/aboutme'},
+    {id:"projects",label:"Projects & Skills", link:'/projects'},
+    {id:"hobby",label:"Hobby", link:'/hobby'},
+    {id:"contact",label:"Contact Me", link:'/contact'}
   ]
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [link,activeLink]= useState("home")
   return (
     <>
-    <motion.div className={`flex sticky top-0 z-50 ${t.bg} ${t.text} border-b pt-10 sm:p-4 border-zinc-200  justify-between items-center`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ 
+    <motion.div className={`flex sticky top-0 z-50 ${t.bg} ${t.text} border-b pt-10 sm:p-4 ${isDark? 'border-pink-200':'border-zinc-300'}  justify-between items-center`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ 
     duration: 0.5,
     delay: 0.5,  
     ease: "easeInOut" 
@@ -28,14 +29,15 @@ function NavBar() {
         <h1 className={`text-4xl font-bold `}>Portfolio</h1>
         <div className={`gap-2 ${t.text} hidden sm:flex sm:gap-10`}>
            {navOptions.map((option)=>(
-            <div key={option.id}
+            <Link key={option.id}
+            to={option.link}
             onClick={()=>activeLink(option.id)}
             className={`cursor-pointer font transition ${
               link === option.id ? "font-bold" : isDark? "text-gray-400 hover:text-white":"text-gray-600 hover:text-black hover:font-bold"
             }`}
-            > {option.label}</div>
+            > {option.label}</Link>
            ))}
-           <button className={`px-2 rounded-xl ${isDark ? 'bg-white border-black text-black':'bg-black border-white text-white'}`}>Contact me</button>
+         
            < button onClick={toggleTheme}
             className={`flex items-center gap-2 px-4 py-1 rounded-full border transition-all duration-300 
               ${isDark
@@ -87,7 +89,8 @@ function NavBar() {
         {/* nav options and its link  */}
         <div className='flex flex-col gap-4'>
           {navOptions.map((option)=>(
-            <div
+            <Link
+            to={option.link}
             key={option.id}
             onClick = {()=>{
               activeLink(option.id)
@@ -99,7 +102,7 @@ function NavBar() {
                 :'border-gray-200 text-gray-500 hover:text-black'}`}
             >
               {option.label}
-            </div>
+            </Link>
 
           ))}
 

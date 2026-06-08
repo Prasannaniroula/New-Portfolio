@@ -4,6 +4,7 @@ import { AnimatePresence, easeInOut, motion } from "motion/react";
 import { themes } from "../Context/ThemeContext";
 import { useTheme } from "../Context/ThemeContext";
 import { BsLinkedin, BsGithub, BsFacebook } from "react-icons/bs";
+import { BsArrowRight } from "react-icons/bs";
 
 function Index() {
   const { isDark, toggleTheme } = useTheme();
@@ -24,11 +25,13 @@ function Index() {
           isDark ? "text-white" : "text-black"
         }`}
       >
-        <div className="w-1/2 hidden justify-center items-center sm:flex">
+        <motion.div
+        initial = {{y: "calc(10vw -100%)"}}
+         className="w-1/2 hidden justify-center items-center sm:flex">
           <div className="flex flex-col gap-10 mt-10">
             <div className="text-4xl font-bold">Hi, I am</div>
             <div className="flex-col gap-4 ">
-              <div className="text-6xl font-bold">Prasanna Niroula</div>
+              <h1 className="text-6xl font-bold">Prasanna Niroula</h1>
               <div className="text-xl">Full-stack developer/AI enthusiast</div>
               <div className="flex gap-8 mt-5">
                 <a
@@ -53,13 +56,14 @@ function Index() {
                   <BsFacebook className="text-2xl cursor-pointer hover:text-blue-500 transition" />
                 </a>
               </div>
+              <button className={`text-xl border p-4 rounded-xl mt-8 inline-flex items-center gap-2 ${isDark? 'border-white hover:bg-red-800 hover:text-white':'border-black hover:bg-red-800 hover:text-white'}`}>Get in touch <BsArrowRight/>  </button>
             </div>
           </div>
-        </div>
+        </motion.div>
         <div className="w-1/2 flex justify-center items-center">
           <div
             className={`w-[520px] h-[520px] flex justify-center items-center bg-red-800 text-white border-4 rounded-full overflow-hidden pt-10 m-10 ${
-              isDark ? "border-pink-300" : "border-pink-500"
+              isDark ? "border-pink-300" : "border-pink-300"
             }`}
           >
             <motion.img
