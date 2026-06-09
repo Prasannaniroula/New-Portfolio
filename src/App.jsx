@@ -6,6 +6,7 @@ import NavBar from './Components/NavBar';
 import Index from './Pages/Index';
 import UnderConstruction from './Pages/UnderConstruction';
 import Contactme from './Pages/Contactme';
+import Aboutme from './Pages/Aboutme.jsx';
 
 function App() {
   const{isDark, toggleTheme} = useTheme();
@@ -18,7 +19,7 @@ function App() {
       <Route path="/projects" element={<Projects/>} />
       <Route path="/hobby" element={<UnderConstruction/>} />
       <Route path="/contact" element={<Contactme/>} />
- 
+      <Route path="/about" element={<Aboutme/>} />
     </Routes>
     </div>
     </div>

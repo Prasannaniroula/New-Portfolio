@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { VscThreeBars } from "react-icons/vsc";
 import { useTheme } from '../Context/ThemeContext';
 import { themes } from '../Context/ThemeContext';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function NavBar() {
   const{isDark, toggleTheme} = useTheme();
@@ -12,13 +12,12 @@ function NavBar() {
   
   const navOptions = [
     {id:"home",label:"Home", link:'/'},
-    {id:"aboutme",label:"About me",link:'/aboutme'},
+    {id:"aboutme",label:"About me",link:'/about'},
     {id:"projects",label:"Projects & Skills", link:'/projects'},
     {id:"hobby",label:"Hobby", link:'/hobby'},
     {id:"contact",label:"Contact Me", link:'/contact'}
   ]
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [link,activeLink]= useState("home")
   return (
     <>
     <motion.div className={`flex sticky top-0 z-50 ${t.bg} ${t.text} border-b pt-10 p-4 sm:px-20 sm:py-2 ${isDark? 'border-pink-200':'border-zinc-600'}  justify-between items-center`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ 
@@ -29,13 +28,13 @@ function NavBar() {
         <h1 className={`text-4xl  `}><Link to='/'>Prasanna Niroula</Link></h1>
         <div className={`gap-2 ${t.text} hidden sm:flex sm:gap-10`}>
            {navOptions.map((option)=>(
-            <Link key={option.id}
+            <NavLink
+            key={navOptions.id}
             to={option.link}
-            onClick={()=>activeLink(option.id)}
-            className={`cursor-pointer font transition ${
-              link === option.id ? "font-bold" : isDark? "text-gray-400 hover:text-white":"text-gray-600 hover:text-black hover:font-bold"
+            className={({isActive})=>`cursor-pointer font transition ${
+              isActive ? "font-bold" : isDark? "text-gray-400 hover:text-white":"text-gray-600 hover:text-black hover:font-bold"
             }`}
-            > {option.label}</Link>
+            > {option.label}</NavLink>
            ))}
          
            < button onClick={toggleTheme}
