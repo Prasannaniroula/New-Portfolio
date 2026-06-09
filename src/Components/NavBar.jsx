@@ -29,7 +29,7 @@ function NavBar() {
         <div className={`gap-2 ${t.text} hidden sm:flex sm:gap-10`}>
            {navOptions.map((option)=>(
             <NavLink
-            key={navOptions.id}
+            key={option.id}
             to={option.link}
             className={({isActive})=>`cursor-pointer font transition ${
               isActive ? "font-bold" : isDark? "text-gray-400 hover:text-white":"text-gray-600 hover:text-black hover:font-bold"

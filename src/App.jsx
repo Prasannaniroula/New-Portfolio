@@ -7,6 +7,7 @@ import Index from './Pages/Index';
 import UnderConstruction from './Pages/UnderConstruction';
 import Contactme from './Pages/Contactme';
 import Aboutme from './Pages/Aboutme.jsx';
+import Page404 from './Pages/Page404.jsx';
 
 function App() {
   const{isDark, toggleTheme} = useTheme();
@@ -16,6 +17,7 @@ function App() {
     <div className={`flex flex-col px-4 sm:px-20 py-0 `}>
     <Routes>
       <Route path="/" element={<Index/>} />
+      <Route path='*' element={<Page404/>}/>
       <Route path="/projects" element={<Projects/>} />
       <Route path="/hobby" element={<UnderConstruction/>} />
       <Route path="/contact" element={<Contactme/>} />

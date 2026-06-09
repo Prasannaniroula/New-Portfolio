@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useTheme } from '../Context/ThemeContext'
 import { themes } from '../Context/ThemeContext'
 import { BsArrowUpRight } from 'react-icons/bs'
+import { Helmet } from 'react-helmet-async'
 
 const projects = [
   {
@@ -29,6 +30,14 @@ function Projects() {
   const t = isDark ? themes.dark : themes.light
 
   return (
+    <>
+    <Helmet>
+  <title>Projects | Prasanna Niroula</title>
+  <meta
+    name="description"
+    content="Explore web development and machine learning projects built by Prasanna Niroula."
+  />
+</Helmet>
     <div className={`min-h-screen w-full pb-20 ${t.bg} ${t.text}`}>
 
       {/* Back */}
@@ -117,6 +126,7 @@ function Projects() {
         ))}
       </div>
     </div>
+    </>
   )
 }
 

@@ -7,6 +7,7 @@ import { CgFacebook, CgMail } from 'react-icons/cg'
 import { CiLinkedin } from 'react-icons/ci'
 import { VscGithub } from 'react-icons/vsc'
 import { BsArrowUpRight } from 'react-icons/bs'
+import { Helmet } from 'react-helmet-async'
 
 const methods = [
   {
@@ -52,6 +53,14 @@ function Contactme() {
   const t = isDark ? themes.dark : themes.light
 
   return (
+    <>
+    <Helmet>
+  <title>Contact | Prasanna Niroula</title>
+  <meta
+    name="description"
+    content="Get in touch with Prasanna Niroula for web development and software projects."
+  />
+</Helmet>
     <div className={`min-h-screen w-full pb-20 ${t.bg} ${t.text}`}>
 
       {/* Back */}
@@ -110,6 +119,7 @@ function Contactme() {
         ))}
       </div>
     </div>
+    </>
   )
 }
 

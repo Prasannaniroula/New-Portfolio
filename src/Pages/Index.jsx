@@ -8,6 +8,7 @@ import { BsLinkedin, BsGithub, BsFacebook, BsArrowUpRight, BsArrowRight } from "
 import { CgFacebook, CgMail } from 'react-icons/cg'
 import { CiLinkedin } from 'react-icons/ci'
 import { VscGithub } from 'react-icons/vsc'
+import { Helmet } from "react-helmet-async";
 
 const methods = [
   { label: "Email", icon: <CgMail size={28} />, display: "Prasannaniroula987@gmail.com", href: "mailto:Prasannaniroula987@gmail.com", color: "group-hover:text-red-400" },
@@ -49,6 +50,13 @@ function Index() {
 
   return (
     <>
+    <Helmet>
+  <title>Prasanna Niroula | Full Stack Developer</title>
+  <meta
+    name="description"
+    content="Portfolio of Prasanna Niroula, Full Stack Developer specializing in React, Node.js and Machine Learning."
+  />
+</Helmet>
       {/* ── HERO ── */}
       <div>
         {/* Desktop */}

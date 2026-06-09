@@ -3,6 +3,7 @@ import { useTheme } from '../Context/ThemeContext'
 import { themes } from '../Context/ThemeContext'
 import { VscArrowLeft } from 'react-icons/vsc'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 function Aboutme() {
   const { isDark } = useTheme()
@@ -20,6 +21,14 @@ function Aboutme() {
   const interests = ["🤖 Artificial Intelligence", "📊 Data Analysis", "🧩 Problem Solving", "✈️ Travelling"]
 
   return (
+    <>
+     <Helmet>
+      <title>About | Prasanna Niroula</title>
+      <meta
+        name="description"
+        content="I'm a fresher Full-Stack Developer from Biratnagar, Nepal, currently pursuing my BSc. CSIT at MMAMC. I specialize in MERN stack development and have built real-world projects that solve practical problems."
+      />
+    </Helmet>
     <div className={`min-h-screen w-full pb-20 ${t.bg} ${t.text}`}>
 
       {/* Back */}
@@ -104,6 +113,7 @@ function Aboutme() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
