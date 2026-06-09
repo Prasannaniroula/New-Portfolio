@@ -26,7 +26,7 @@ function NavBar() {
     delay: 0.5,  
     ease: "easeInOut" 
   }}>
-        <h1 className={`text-4xl font-bold `}>Portfolio</h1>
+        <h1 className={`text-4xl font-bold `}><Link to='/'>Portfolio</Link></h1>
         <div className={`gap-2 ${t.text} hidden sm:flex sm:gap-10`}>
            {navOptions.map((option)=>(
             <Link key={option.id}
