@@ -6,7 +6,41 @@ import { themes } from "../Context/ThemeContext";
 import { useTheme } from "../Context/ThemeContext";
 import { BsLinkedin, BsGithub, BsFacebook } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
-import { VscArrowLeft } from "react-icons/vsc";
+import { CgFacebook, CgMail } from 'react-icons/cg'
+import { CiLinkedin } from 'react-icons/ci'
+import { VscGithub } from 'react-icons/vsc'
+import { BsArrowUpRight } from 'react-icons/bs'
+
+const methods = [
+  {
+    label: "Email",
+    icon: <CgMail size={28} />,
+    display: "Prasannaniroula987@gmail.com",
+    href: "mailto:Prasannaniroula987@gmail.com",
+    color: "group-hover:text-red-400",
+  },
+  {
+    label: "Facebook",
+    icon: <CgFacebook size={28} />,
+    display: "prasanna.niraula.9",
+    href: "https://www.facebook.com/prasanna.niraula.9",
+    color: "group-hover:text-blue-500",
+  },
+  {
+    label: "LinkedIn",
+    icon: <CiLinkedin size={28} />,
+    display: "prasanna-niroula",
+    href: "https://www.linkedin.com/in/prasanna-niroula-74564219b",
+    color: "group-hover:text-blue-400",
+  },
+  {
+    label: "GitHub",
+    icon: <VscGithub size={28} />,
+    display: "Prasannaniroula",
+    href: "https://github.com/Prasannaniroula",
+    color: "group-hover:text-purple-400",
+  },
+]
 
 function Index() {
   const { isDark, toggleTheme } = useTheme();
@@ -60,7 +94,7 @@ function Index() {
                   <BsFacebook className="text-2xl cursor-pointer hover:text-blue-500 transition" />
                 </a>
               </div>
-              <button className={`text-xl border p-4 rounded-xl mt-8 inline-flex items-center gap-2 ${isDark? 'border-white hover:bg-red-800 hover:text-white':'border-black hover:bg-red-800 hover:text-white'}`}>Get in touch <BsArrowRight/>  </button>
+              <Link to='/contact'><button className={`text-xl border p-4 rounded-xl mt-8 inline-flex items-center gap-2 ${isDark? 'border-white hover:bg-red-800 hover:text-white':'border-black hover:bg-red-800 hover:text-white'}`}>Get in touch <BsArrowRight/>  </button></Link>
             </div>
           </div>
         </motion.div>
@@ -163,11 +197,13 @@ function Index() {
         </div> 
         <div className={`flex flex-col sm:flex-row items-center text-center gap-10 sm:pl-8`}>
         
-        <div className={`w-full h-60 p-4 sm:w-full sm:h-86 flex items-center justify-center relative group`}>
+        <div className={`w-full h-60 p-4 sm:w-full sm:h-86 flex items-center justify-center relative group cursor-pointer`}>
+          <Link to="https://sdragent.vercel.app/">
             <img className='transition-all duration-300 group-hover:blur-sm' src="./Preview_SDR.png" alt="Preview of the image"/>
             <div className='absolute inset-0 flex flex-col items-center justify-center opacity-0  group-hover:opacity-100 transition-all duration-300'>
                 <p className='text-2xl text-black'>Preview</p>
             </div>
+            </Link>
         </div>
         <div className={`w-full h-54 text-justify`}>
             <h1 className={`text-center text-2xl font-semibold pb-2`}>SDR(Sales Development Representative) Agent</h1>

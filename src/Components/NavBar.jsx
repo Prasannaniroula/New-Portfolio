@@ -21,12 +21,12 @@ function NavBar() {
   const [link,activeLink]= useState("home")
   return (
     <>
-    <motion.div className={`flex sticky top-0 z-50 ${t.bg} ${t.text} border-b pt-10 sm:p-4 ${isDark? 'border-pink-200':'border-zinc-300'}  justify-between items-center`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ 
+    <motion.div className={`flex sticky top-0 z-50 ${t.bg} ${t.text} border-b pt-10 p-4 sm:px-20 sm:py-2 ${isDark? 'border-pink-200':'border-zinc-600'}  justify-between items-center`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ 
     duration: 0.5,
     delay: 0.5,  
     ease: "easeInOut" 
   }}>
-        <h1 className={`text-4xl font-bold `}><Link to='/'>Portfolio</Link></h1>
+        <h1 className={`text-4xl  `}><Link to='/'>Prasanna Niroula</Link></h1>
         <div className={`gap-2 ${t.text} hidden sm:flex sm:gap-10`}>
            {navOptions.map((option)=>(
             <Link key={option.id}

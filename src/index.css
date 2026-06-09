@@ -2,8 +2,13 @@
 
 @import "tailwindcss";
 
+@font-face{
+  font-family: myFont;
+  src:url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap')
+}
 
 body{
   padding: 0;
-  font-family:  "PT Sans";
+  font-family: myFont;
+  font-size: large;
 }
