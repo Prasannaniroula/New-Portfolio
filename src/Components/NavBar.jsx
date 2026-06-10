@@ -86,7 +86,7 @@ function NavBar() {
                 </button>
         </div>
         {/* nav options and its link  */}
-        <div className='flex flex-col gap-4'>
+        <div className={`flex flex-col gap-4 border ${isDark?'border-zinc-400':'border-zinc-800'}`}>
           {navOptions.map((option)=>(
             <Link
             to={option.link}
