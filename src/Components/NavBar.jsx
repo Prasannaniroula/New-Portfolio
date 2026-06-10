@@ -91,12 +91,9 @@ function NavBar() {
             <Link
             to={option.link}
             key={option.id}
-            onClick = {()=>{
-              activeLink(option.id)
-              setIsMenuOpen(false)
-            }}
-            className={`pl-4 text-lg cursor-pointer py-2 border-b transition 
-              ${link == option.id ? "font-semibold" 
+            onClick = {()=>{setIsMenuOpen(false)}}
+            className={({isActive})=>`pl-4 text-lg cursor-pointer py-2 border-b transition 
+              ${isActive ? "font-semibold" 
                 : isDark ? 'border-zinc-800 text-gray-400 hover:text-white'
                 :'border-gray-200 text-gray-500 hover:text-black'}`}
             >
