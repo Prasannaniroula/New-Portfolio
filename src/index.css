@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carme&family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 @import "tailwindcss";
 
-@font-face{
-  font-family: myFont;
-  src:url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap')
+@theme{
+  --font-carme:"Carme", sans-serif;
+  --font-outfit :"Outfit", sans-serif;
+  --font-pt-sans:"Pt-sans",sans-serif;
+  --font-raleway:"Raleway",sans-serif;
 }
 
 body{
   padding: 0;
-  font-family: myFont;
+  font-family: var(--font-outfit);
   font-size: large;
 }

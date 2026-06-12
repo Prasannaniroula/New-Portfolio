@@ -11,10 +11,10 @@ import { VscGithub } from 'react-icons/vsc'
 import { Helmet } from "react-helmet-async";
 
 const methods = [
-  { label: "Email", icon: <CgMail size={28} />, display: "Prasannaniroula987@gmail.com", href: "mailto:Prasannaniroula987@gmail.com", color: "group-hover:text-red-400" },
-  { label: "Facebook", icon: <CgFacebook size={28} />, display: "prasanna.niraula.9", href: "https://www.facebook.com/prasanna.niraula.9", color: "group-hover:text-blue-500" },
-  { label: "LinkedIn", icon: <CiLinkedin size={28} />, display: "prasanna-niroula", href: "https://www.linkedin.com/in/prasanna-niroula-74564219b", color: "group-hover:text-blue-400" },
-  { label: "GitHub", icon: <VscGithub size={28} />, display: "Prasannaniroula", href: "https://github.com/Prasannaniroula", color: "group-hover:text-purple-400" },
+  { label: "Email", icon: <CgMail size={28} />, display: "Email Link", href: "mailto:Prasannaniroula987@gmail.com", color: "group-hover:text-red-400" },
+  { label: "Facebook", icon: <CgFacebook size={28} />, display: "Facebook Profile", href: "https://www.facebook.com/prasanna.niraula.9", color: "group-hover:text-blue-500" },
+  { label: "LinkedIn", icon: <CiLinkedin size={28} />, display: "LinkedIn Profile", href: "https://www.linkedin.com/in/prasanna-niroula-74564219b", color: "group-hover:text-blue-400" },
+  { label: "GitHub", icon: <VscGithub size={28} />, display: "Github Profile", href: "https://github.com/Prasannaniroula", color: "group-hover:text-purple-400" },
 ]
 
 const projects = [
