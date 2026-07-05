@@ -74,7 +74,7 @@ function NavBar() {
         transition={{type:"tween", duration:0.3}}
         >
           <div>
-        <div className='flex justify-between items-center pb-8 border-b border-gray-200'>
+        <div className='flex justify-between items-center pb-8'>
           <h1 className='text-2xl font-bold pt-2 pl-2'>
             Portfolio
           </h1>
@@ -86,30 +86,39 @@ function NavBar() {
                 </button>
         </div>
         {/* nav options and its link  */}
-        <div className={`flex flex-col gap-4 border ${isDark?'border-zinc-400':'border-zinc-800'}`}>
-          {navOptions.map((option)=>(
-            <Link
+        <div className={`flex flex-col gap-4`}>
+          {navOptions
+          .filter((option)=> option.id !=="contact")
+          .map((option)=>(
+            <NavLink
             to={option.link}
             key={option.id}
             onClick = {()=>{setIsMenuOpen(false)}}
             className={({isActive})=>`pl-4 text-lg cursor-pointer py-2 border-b transition 
               ${isActive ? "font-semibold" 
-                : isDark ? 'border-zinc-800 text-gray-400 hover:text-white'
+                : isDark ? 'border-zinc-200 text-gray-400 hover:text-white'
                 :'border-gray-200 text-gray-500 hover:text-black'}`}
             >
               {option.label}
-            </Link>
+            </NavLink>
 
           ))}
 
         </div>
         </div>
         <div className='flex flex-col gap-3 bottom-0'>
-        <button className={`w-full py-2 rounded-xl ${isDark ? 'bg-white text-black' : 'bg-black text-white'}`} >
+        <Link 
+        to='/contact' 
+        onClick={()=> {setIsMenuOpen(false)}} 
+        className={`w-full py-2 text-center rounded-xl ${isDark ? 'bg-white text-black' : 'bg-black text-white'}`} >
           Contact me
-        </button>
+        </Link>
         <button 
-        onClick={toggleTheme}
+        onClick={()=>{
+          toggleTheme();
+          setIsMenuOpen(false);
+        }
+        }
         className={`flex items-center justify-center gap-2 w-full py-2 rounded-full border transition-all duration-300 ${isDark ? 'border-white text-white' : 'border-black text-black'}`}
         >
           <span>{isDark ? '☀️' : '🌙'}</span>

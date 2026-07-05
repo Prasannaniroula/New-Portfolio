@@ -18,7 +18,7 @@ function Aboutme() {
 
   const skills = ["React", "Node.js", "Express", "MongoDB", "JavaScript", "Python", "Git", "REST APIs"]
 
-  const interests = ["🤖 Artificial Intelligence", "📊 Data Analysis", "🧩 Problem Solving", "✈️ Travelling"]
+  const interests = ["Web Design"," Artificial Intelligence", " Data Analysis", "Problem Solving", "Travelling"]
 
   return (
     <>
@@ -64,12 +64,6 @@ function Aboutme() {
             </p>
           </div>
 
-          <div>
-            <p className={`leading-relaxed text-base ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-              When I'm not coding, you'll probably find me planning my next trip ✈️ — travelling 
-              is my favourite way to recharge and get inspired.
-            </p>
-          </div>
         </div>
 
         {/* Right — Stats + Skills + Interests */}

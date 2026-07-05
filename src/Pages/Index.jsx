@@ -127,9 +127,11 @@ function Index() {
                     <BsFacebook className="text-2xl cursor-pointer hover:text-blue-500 transition" />
                   </a>
                 </div>
+                <Link to='/contact'>
                 <button className="border rounded-2xl mt-4 bg-red-800 text-white text-xl p-3 font-semibold">
                   Hire Me
                 </button>
+                </Link>
               </div>
             </div>
           </div>
