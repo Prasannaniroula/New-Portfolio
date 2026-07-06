@@ -20,7 +20,7 @@ function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
-    <motion.div className={`flex sticky top-0 z-50 ${t.bg} ${t.text} border-b pt-10 p-4 sm:px-20 sm:py-2 ${isDark? 'border-pink-200':'border-zinc-600'}  justify-between items-center`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ 
+    <motion.div className={`flex sticky top-0 z-50 ${t.bg} ${t.text} border-b pt-10 p-4 sm:px-20 sm:py-4 sm:pt-8 ${isDark? 'border-pink-200':'border-zinc-600'}  justify-between items-center`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ 
     duration: 0.5,
     delay: 0.5,  
     ease: "easeInOut" 

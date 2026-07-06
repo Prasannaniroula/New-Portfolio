@@ -56,8 +56,11 @@ function Index() {
     name="description"
     content="Portfolio of Prasanna Niroula, Full Stack Developer specializing in React, Node.js and Machine Learning."
   />
+  <meta
+    name="title"
+    content="Prasanna Niroula"
+  />
 </Helmet>
-      {/* ── HERO ── */}
       <div>
         {/* Desktop */}
         <div className={`w-full h-screen hidden sm:flex ${t.navbar} ${isDark ? "text-white" : "text-black"}`}>
@@ -78,11 +81,17 @@ function Index() {
                     <BsFacebook className="text-2xl cursor-pointer hover:text-blue-500 transition" />
                   </a>
                 </div>
+                <div className="flex gap-8">
                 <Link to='/contact'>
                   <button className={`text-xl border p-4 rounded-xl mt-4 inline-flex items-center gap-2 transition ${isDark ? 'border-white hover:bg-red-800 hover:text-white' : 'border-black hover:bg-red-800 hover:text-white'}`}>
                     Get in touch <BsArrowRight />
                   </button>
                 </Link>
+                <a href='./PrasannaResume.pdf' target="_blank" rel="noopener noreferrer" 
+                className= {`text-xl inline-flex gap-2 mt-4 p-4 rounded-xl border transition-all duration-300 hover:opacity-80 ${isDark ? 'border-white hover:bg-red-800 hover:text-white' : 'border-black hover:bg-red-800 hover:text-white'}`}>
+                  View CV <BsArrowRight className="mt-1" />
+                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -128,10 +137,15 @@ function Index() {
                   </a>
                 </div>
                 <Link to='/contact'>
-                <button className="border rounded-2xl mt-4 bg-red-800 text-white text-xl p-3 font-semibold">
-                  Hire Me
+                <button className="inline-flex gap-2 border rounded-full mt-4 bg-red-800 text-white text-xl p-4 hover:font-semibold">
+                  Hire Me <BsArrowRight className="mt-1" />
                 </button>
                 </Link>
+
+                <a href='./PrasannaResume.pdf' target="_blank" rel="noopener noreferrer" 
+                className="py-4 px-6 ml-4 rounded-full border transition-all duration-300 hover:opacity-80 text-white">
+                  View CV
+                </a>
               </div>
             </div>
           </div>
@@ -143,7 +157,7 @@ function Index() {
         <div className="w-10 h-1 bg-red-700 rounded mb-4" />
         <h1 className="font-bold text-5xl mb-3">Projects</h1>
         <p className={`text-base max-w-xl leading-relaxed mb-12 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
-          A collection of things I've built — from full-stack web apps to AI-powered tools.
+          A collection of things I've built from full-stack web apps to AI-powered tools.
         </p>
 
         <div className="flex flex-col gap-6">
